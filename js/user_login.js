@@ -10,7 +10,8 @@ $(document).ready(function() {
         e.preventDefault();
     });
     
-    $('#log_me_in').click(function() {
+    $('#log_me_in').click(function($event) {
+        $event.preventDefault();
       login();
     });
 
@@ -60,7 +61,10 @@ function login(){
     if(validatedUser(email, password))
     {
         window.location = 'user_portal.html';
-        // window.location.replace("file:///D:/com/mahadeo/MEAN/POC/LMS_Simple/user_portal.html")
+        // setTimeout(() => {
+        //     window.location = 'user_portal.html';
+        // }, 1200)
+        
     } else {
         window.alert('username or password invalid');
     }
